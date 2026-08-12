@@ -94,3 +94,5 @@ Then divided again the new half and repeat**
 
 1. 
 ![EXPONENTIAL-Example](./images/Exponential-Example.png)
+
+In the future we will see more examples with more codes
