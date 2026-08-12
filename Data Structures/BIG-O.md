@@ -40,6 +40,10 @@ But lets see how this works with a function
 # **EXAMPLES**
 
 ### Constant ----> O(1) 
+
+# **EXAMPLES**
+
+### Constant ----> O(1) 
 Example
 > **a := 1**
 > **b := 2**
@@ -86,7 +90,7 @@ Then divided again the new half and repeat**
 
 # Lets see another ones
 1. 
-![Cuadratic2-Example](./images/image.png)
+![Cuadratic2-Example](./images/Cuadratic2-Example.png)
 
-2. 
-![EXPONENTIAL-Example](image.png)
+1. 
+![EXPONENTIAL-Example](./images/Exponential-Example.png)
