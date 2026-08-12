@@ -36,6 +36,10 @@ But lets see how this works with a function
 **The highest exponential here is 3 so we can ignore the rest and keep the highest exponential as our BIG O**
 
 # **IF THE PROGRAM DO NOT DEPEND ON N, THEN IS O(1)**
+
+# **EXAMPLES**
+
+### Constant ----> O(1) 
 Example
 > **a := 1**
 > **b := 2**
@@ -47,4 +51,42 @@ Example
 
 We can see that we do not have an **N** so we have **constant time**
 
-# Linear Example
+# Linear ----> O(N) 
+
+![Function](./images/Linear-Example.png)
+
+We depend on N since the cicle will last until reach N and as we say before we ignore the constants 
+
+# Cuadratic ----> O(N^2)
+![Cuadratic-Example](./images/Cuadratic-Example.png)
+As we see above we having two **FOR CICLES** that have a restriction with N and those cicles begins at 0, **what happens when one of them starts at 1**
+
+**Well actually for that is also O(N^2)**
+
+# Logarithm  ----> O(log(n))
+
+We have a sorted array, we want to find the index of a particular value if it exists. 
+So we have
+
+> **low := 0
+> high := n-1
+> while low <= high Do
+> | mid := (low + high) / 2
+> | if array[mid] == vale: return mid
+>  || ELSE If array[mid] < value : low = mid + 1
+>  || ELSE If array[mid] > value : low = mid - 1
+> return -1 //value not found**
+
+![Logarithm-Example](./images/logarithm-Example.jpeg)
+
+*WE COULD SEE THIS AS*
+**Divide the amount of work in two and search in which side it is first.
+Then divided again the new half and repeat**
+
+
+# Lets see another ones
+1. 
+![Cuadratic2-Example](./images/image.png)
+
+2. 
+![EXPONENTIAL-Example](image.png)
