@@ -32,4 +32,19 @@ EXAMPLES:
 
 But lets see how this works with a function
 ![Function](./images/function-BigO.png)
+
 **The highest exponential here is 3 so we can ignore the rest and keep the highest exponential as our BIG O**
+
+# **IF THE PROGRAM DO NOT DEPEND ON N, THEN IS O(1)**
+Example
+> **a := 1**
+> **b := 2**
+> **c := a + 5*b** 
+> *Then*
+> **i:=0
+> while i <11 DO
+>   i = i +1**
+
+We can see that we do not have an **N** so we have **constant time**
+
+# Linear Example
