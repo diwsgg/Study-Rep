@@ -20,7 +20,7 @@ public class DynamicArray {
             System.out.println("\n----------------------------------------------------------");
             System.out.println("Options with the array:");
             System.out.println("----------------------------------------------------------\n");
-            System.out.println("1. Fill all the array (just if has no use it 2nd option)");
+            System.out.println("1. Fill all the array");
             System.out.println("2. Fill the array with one element");
             System.out.println("3. Search an element");
             System.out.println("4. See the elements of the array");
@@ -31,7 +31,7 @@ public class DynamicArray {
             int element;
             switch (option) {
                 case 1:
-                    fillArray(array);
+                    array = fillArray(array);
                     System.out.println("Array fill up");
                     break;
                 case 2:
@@ -50,7 +50,6 @@ public class DynamicArray {
                     }
                     break;
                 case 4:
-                    //Print the array that is on the moment and not just empty slots
                     printArray(array);
                     break;
                 case 5:
@@ -64,21 +63,26 @@ public class DynamicArray {
 
     //Method to fill the array with values, this method can be work later
     //for now will not be available 
-    public static void fillArray(int[] array) {
+    public static int[] fillArray(int[] array) {
         //Check if array is full
         if(count >= array.length) {
-            System.out.println("The array is full");
-            return;
-        }
-        /*else{
-
-            System.out.println("Enter the elements of the array: ");
-            for (int i=0; i < array.length; i++) {
-                System.out.println("Element: "+ (i+1));
-                array[i] = Integer.parseInt(System.console().readLine());
-                count++;
+            //We can copy the logic for one by one element
+            int [] newarray = new int [(array.length)*2];
+            //Copy all elements
+            for (int i=0; i<count; i++){
+                newarray[i] = array[i];
             }
-        }*/
+            //Now array has to be the same
+            array = newarray;
+        }
+        //After duplicate the array if is necessary
+        System.out.println("Enter the elements of the array: ");
+        for (int i=count; i<array.length; i++){
+            System.out.println("Element: "+ (i+1));
+            array[i] = Integer.parseInt(System.console().readLine());
+            count++; 
+        }    
+        return array;
     }
 
     //Method to put one element at time
@@ -94,6 +98,8 @@ public class DynamicArray {
             }
             //Now array has to be the same
             array = newarray;
+            //WE can print a message saying that we have duplicate the size
+            System.out.println("The size of the array has duplicate it, now can fill: "+((array.length/2)-1)+" more elements");
         }
         //After we do the last comparasion we can now put the new element on the "new array"
         array[count] = element;
@@ -102,12 +108,15 @@ public class DynamicArray {
         return array;
     } 
 
+    //Se the elements on the array
     public static void printArray(int [] array){
         if(count==0){
             System.out.println("There is no elements on the array");
             return;
         }
-        for(int i=0; i<count; i++){
+        //If we only wanted to see the elements on the array filled by us "i<count" if wanted to the all the slots
+        //Even if we have not fill them, then "i<array.length"
+        for(int i=0; i<array.length; i++){
             System.out.println("|"+"["+array[i]+"]"+"|");
         }
     }

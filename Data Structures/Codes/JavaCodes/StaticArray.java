@@ -23,7 +23,7 @@ public class StaticArray {
             System.out.println("\n----------------------------------------------------------");
             System.out.println("Options with the array:");
             System.out.println("----------------------------------------------------------\n");
-            System.out.println("1. Fill all the array (just if has no use it 2nd option)");
+            System.out.println("1. Fill all the array");
             System.out.println("2. Fill the array with one element");
             System.out.println("3. Search an element");
             System.out.println("4. See the elements of the array");
@@ -35,7 +35,6 @@ public class StaticArray {
             switch (option) {
                 case 1:
                     fillArray(array);
-                    System.out.println("Array fill up");
                     break;
                 case 2:
                     System.out.println("Type the element to put inside");
@@ -53,7 +52,6 @@ public class StaticArray {
                     }
                     break;
                 case 4:
-                    //Print the array that is on the moment and not just empty slots
                     printArray(array);
                     break;
                 case 5:
@@ -70,16 +68,16 @@ public class StaticArray {
         //Check if array is full
         if(count >= array.length) {
             System.out.println("The array is full");
-            return;
-        }else{
-
-            System.out.println("Enter the elements of the array: ");
-            for (int i=0; i < array.length; i++) {
-                System.out.println("Element: "+ (i+1));
-                array[i] = Integer.parseInt(System.console().readLine());
-                count++;
-            }
+            return; //AS we have check and we are going to return we do not have to put an else instruction
         }
+        System.out.println("Enter the elements of the array: ");
+        //Instead of begining at 0 begin at count, this will work for the rest of the array
+        for (int i=count; i < array.length; i++) {
+            System.out.println("Element: "+ (i+1));
+            array[i] = Integer.parseInt(System.console().readLine());
+            count++;
+        }
+        System.out.println("Array fill up");
     }
 
     //Method to put one element at time
@@ -99,7 +97,7 @@ public class StaticArray {
             System.out.println("There is no elements on the array");
             return;
         }
-        for(int i=0; i<count; i++){
+        for(int i=0; i<array.length; i++){
             System.out.println("|"+"["+array[i]+"]"+"|");
         }
     }
