@@ -65,6 +65,7 @@ public class StaticArray {
 
     //Method to fill the array with values
     public static void fillArray(int[] array) {
+        Scanner scanner = new Scanner(System.in);
         //Check if array is full
         if(count >= array.length) {
             System.out.println("The array is full");
@@ -74,7 +75,7 @@ public class StaticArray {
         //Instead of begining at 0 begin at count, this will work for the rest of the array
         for (int i=count; i < array.length; i++) {
             System.out.println("Element: "+ (i+1));
-            array[i] = Integer.parseInt(System.console().readLine());
+            array[i] = Integer.parseInt(scanner.nextLine());
             count++;
         }
         System.out.println("Array fill up");

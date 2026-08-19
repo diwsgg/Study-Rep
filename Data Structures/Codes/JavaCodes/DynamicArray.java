@@ -64,6 +64,8 @@ public class DynamicArray {
     //Method to fill the array with values, this method can be work later
     //for now will not be available 
     public static int[] fillArray(int[] array) {
+        Scanner scanner = new Scanner(System.in);
+        
         //Check if array is full
         if(count >= array.length) {
             //We can copy the logic for one by one element
@@ -79,7 +81,7 @@ public class DynamicArray {
         System.out.println("Enter the elements of the array: ");
         for (int i=count; i<array.length; i++){
             System.out.println("Element: "+ (i+1));
-            array[i] = Integer.parseInt(System.console().readLine());
+            array[i] = Integer.parseInt(scanner.nextLine());
             count++; 
         }    
         return array;
