@@ -1,5 +1,7 @@
-This are notes from some videos, and the images or data that is here is not mine at all
-For DATA STRUCTURES and ALgortihms notes
+This are notes from some videos, and the images or data that is here is not mine at all.
+-------------------------
+-------------------------
+For DATA STRUCTURES and Algortihms notes
 The original source and all rights are for:
 
 **WilliamFiset**
