@@ -46,9 +46,9 @@ favAnimal = input("What is your favorite animal: ")
 lenght = len(favAnimal)
 print(lenght)
 
-# HOW TO CONCATENATE VARS that are ints/numbers with strings
+# HOW TO CONCATENATE VARS that are ints/numbers with strings?
 # var1, var2, var3 = 1, 4, 5 
-# print(var1+" 2."+var2+" 3."+var3)
+# print(var1+" 2."+var2+" 3."+var3) --> this is not right, so w=hoiw we fix this
 
 
 #We are going to create a generator a for a brand name

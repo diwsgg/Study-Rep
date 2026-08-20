@@ -116,3 +116,24 @@ score /= 1
 score **= 1
 
 
+# f-strings
+'''
+Instead of using 
+print("Hello"+str(varnumb))
+
+We can convert any type of var with a f-strings, lets see
+
+'''
+
+scoress = 1
+decimal = 1.5
+booleanValue = True
+
+print(f"Your Score is = {scoress}, Your size is {decimal}, and you are a {booleanValue} friend")
+#Instead of 
+print ("Your score is "+ str(scoress)+ " your size is " + str(decimal) +" and you are a "+ str(booleanValue) + " friendssss")
+ 
+#Is more easy, to only do it with f-Strings
+
+a = int("5") / int(2.7) #What is the type of a
+#As int is converting ("5") into 5, and (2.7) into 2, the operation is a= 5/2, but / will give us a float so the result is 2.5 that is a float
