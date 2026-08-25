@@ -13,7 +13,10 @@ The original source and all rights are for:
 
 -------------------------
 -------------------------
-For python, this is the course for ***100 Days of Code™: The Complete Python Pro Bootcamp***
+For python, this is the course for 
+-------------------------
+* ***100 Days of Code™: The Complete Python Pro Bootcamp***
+  
 That is available in Udemy, here is what I re-created in python and jupyter files for more visual understanding 
 -------------------------
 -------------------------
