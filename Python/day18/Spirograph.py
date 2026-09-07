@@ -36,7 +36,7 @@ def draw_circles(numCircles):
         timmy.left(angle)
 
 
-draw_circles(2000)
+draw_circles(205)
 
 screen = turtle.Screen()
 screen.exitonclick()

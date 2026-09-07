@@ -29,7 +29,7 @@ def draw_circles(num_circles):
         timmy.left(angle)
 
 
-draw_circles(2000)
+draw_circles(260)
 
 # Update the screen only once
 screen.update()

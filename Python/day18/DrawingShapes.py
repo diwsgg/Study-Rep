@@ -29,7 +29,7 @@ def drawing():
         timmy.pencolor(color)
         #WE calculate the angle
         angle = 360/i
-        for j in range(i):
+        for _ in range(i):
             #WE are moving i times 
             timmy.forward(100)
             timmy.right(angle)
