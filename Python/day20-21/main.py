@@ -49,7 +49,11 @@ while game_on:
         scorebd.gameOver()  
         game_on=False
     
-    #check if we have collision with ourselfs (tail)
+    #check if we have collision with one of the parts of the body not just tail
+    for snake_segment in snake.allturtles[1:]:
+        if snake.head.distance(snake_segment)<10:
+            scorebd.gameOver()  
+            game_on = False
 
 
 screen.exitonclick()
