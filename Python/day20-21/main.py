@@ -1,5 +1,7 @@
-from turtle import Screen, Turtle
+from turtle import Screen
 from snake import Snake
+from food import Food
+from scoreboard import ScoreBoard
 import time
 screen = Screen()
 
@@ -10,8 +12,9 @@ screen.title("SnakeGame")
 screen.tracer(0)
 
 #Create the objt 
-
 snake = Snake()
+food = Food()
+scorebd = ScoreBoard()
 
 #We need to listen the user (keys to move)
 screen.listen()
@@ -24,11 +27,29 @@ screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
 game_on = True
-
+counter = 0
 #We are moving always, but the scree.onkey with list can be executed
 while game_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
+
+    #Check if we eat the food (collision with the obj food)
+    if snake.head.distance(food) < 15:
+        #need to create another food but also deleate the one that we put on the screen
+        #WE can change the logic, we can create a method to put the objt into a new direction
+        #And just call that method without creating a new obj
+        food.refresh()
+        #increase the score
+        scorebd.counter()
+    #Also need to increase the size of the snake...
+
+    #Check if we have a collision with a wall
+    if abs(snake.head.xcor())>280 or abs(snake.head.ycor())>280:
+        scorebd.gameOver()  
+        game_on=False
+    
+    #check if we have collision with ourselfs (tail)
+
     
 screen.exitonclick()
