@@ -43,13 +43,13 @@ while game_on:
         #increase the score
         scorebd.counter()
     #Also need to increase the size of the snake...
-
+        snake.extend()
     #Check if we have a collision with a wall
-    if abs(snake.head.xcor())>280 or abs(snake.head.ycor())>280:
+    if abs(snake.head.xcor())>290 or abs(snake.head.ycor())>290:
         scorebd.gameOver()  
         game_on=False
     
     #check if we have collision with ourselfs (tail)
 
-    
+
 screen.exitonclick()

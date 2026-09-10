@@ -16,16 +16,26 @@ class Snake:
         self.create_snake()
         #WE put the "head" as the first turtle created
         self.head = self.allturtles[0]
-    
+
+    #For the beginning we start with 3 segments
     def create_snake(self):
         for positions in STARTING_POSITIONS:
-            newTurtles = Turtle(shape="square")
-            newTurtles.color("white")
-            newTurtles.penup()
-            newTurtles.goto(positions)
-            self.allturtles.append(newTurtles)
+            self.add_segment(positions)
 
-#movement
+    #Increase size of the snake when eat
+    #Add a new segment where?
+    def add_segment(self, position):
+        newTurtles = Turtle(shape="square")
+        newTurtles.color("white")
+        newTurtles.penup()
+        newTurtles.goto(position)
+        self.allturtles.append(newTurtles)
+
+    #new segment to the snake, add it to the tail (.position() pass the coordenates x and y)
+    def extend(self):
+        self.add_segment(self.allturtles[-1].position())
+
+    #movement
     def move(self):
         #we move first all the tail and then the head
         #if we move the head first 
