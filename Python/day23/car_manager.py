@@ -8,9 +8,8 @@ import random
 class CarManager:
     def __init__(self):
         #Position of each one at x=280 (right), but "y" a random one between (-280,280)
-        Yposition = random.randrange(-280,280)
         self.all_shapes = []
-        self.createATurtle(Yposition)
+        self.NewTurtle()
         self.speed = STARTING_MOVE_DISTANCE
 
     
@@ -26,7 +25,7 @@ class CarManager:
 
     def NewTurtle(self):
         #Only creating on Y coordenates
-        Yposition = random.randrange(-260,280)
+        Yposition = random.randrange(-250,280)
         self.createATurtle(Yposition)
 
     def Movement(self):
