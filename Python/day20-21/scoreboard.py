@@ -1,6 +1,13 @@
 #WE can use turtle.write() to display the score inside the screen
 from turtle import Turtle
 
+#Create the path for the new file in the current dir
+from pathlib import Path
+#get the folder 
+PATH_FOLDER = Path(__file__).parent
+#and then only for the file
+PATH_FILE = PATH_FOLDER / "data.txt" 
+
 class ScoreBoard(Turtle):
     def __init__(self):
         #We are creating a new obj
@@ -14,7 +21,10 @@ class ScoreBoard(Turtle):
         self.color("white")
         #ANd start the counting
         self.score = 0
-        self.high_score = 0
+        #we need to read the data from our file
+        with open(PATH_FILE,mode="r") as file:
+            #Convert it to an int
+            self.high_score = int(file.read())
         self.counter()
 
     #HAve the count of 
@@ -32,6 +42,12 @@ class ScoreBoard(Turtle):
     def reset(self):
         if self.score>self.high_score:
             self.high_score = self.score
+            #Save our highscore
+            with open(PATH_FILE,mode="w") as file:
+                #We do not append the highscore only the highest and write it in the file
+                #file.write(str(self.score))
+                #we can do also
+                file.write(f"{self.score}")
         self.score = 0
         self.counter()
 
@@ -43,3 +59,4 @@ class ScoreBoard(Turtle):
         self.goto(0,0)
         #then print the score 
         self.write(arg= f"\aGAME OVER \nFinal Score: {self.score-1}", align="center", font=("Courier",24,"normal"))
+        return True

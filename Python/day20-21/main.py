@@ -26,6 +26,9 @@ screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
+#stop our game
+screen.onkey(scorebd.gameOver,"space")
+
 game_on = True
 counter = 0
 #We are moving always, but the scree.onkey with list can be executed
@@ -54,6 +57,7 @@ while game_on:
         if snake.head.distance(snake_segment)<10:
             scorebd.reset()
             snake.reset()
+
 
 
 screen.exitonclick()
