@@ -11,11 +11,14 @@ class Player(Turtle):
         self.shape("turtle")
         self.setheading(90)
         self.penup()
-        self.teleport(0,-280)
+        self.goto(STARTING_POSITION)
 
     def moveUp(self):
         newy = self.ycor()+10
         self.sety(newy)
 
+    #Instead of checking on main, we are checking this if its true then we can continue
     def resetPosition(self):
-        self.teleport(0,-280)
+        if self.ycor()>=FINISH_LINE_Y:
+            self.goto(STARTING_POSITION)
+            return True
