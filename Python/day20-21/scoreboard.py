@@ -14,6 +14,7 @@ class ScoreBoard(Turtle):
         self.color("white")
         #ANd start the counting
         self.score = 0
+        self.high_score = 0
         self.counter()
 
     #HAve the count of 
@@ -21,9 +22,18 @@ class ScoreBoard(Turtle):
         #WE clean the screen
         self.clear()
         #then print the score 
-        self.write(arg= f"Score: {self.score}", align="center")
+        if self.high_score > 0:
+            self.write(arg= f"Score: {self.score} High Score: {self.high_score-1}", align="center")
+        else:
+            self.write(arg= f"Score: {self.score} High Score: {self.high_score}", align="center")
         #increase the score
         self.score+=1
+
+    def reset(self):
+        if self.score>self.high_score:
+            self.high_score = self.score
+        self.score = 0
+        self.counter()
 
     #PRINT GAME OVER
     def gameOver(self):

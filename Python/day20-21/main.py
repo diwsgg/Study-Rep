@@ -46,14 +46,14 @@ while game_on:
         snake.extend()
     #Check if we have a collision with a wall
     if abs(snake.head.xcor())>290 or abs(snake.head.ycor())>290:
-        scorebd.gameOver()  
-        game_on=False
+        scorebd.reset()
+        snake.reset()
     
     #check if we have collision with one of the parts of the body not just tail
     for snake_segment in snake.allturtles[1:]:
         if snake.head.distance(snake_segment)<10:
-            scorebd.gameOver()  
-            game_on = False
+            scorebd.reset()
+            snake.reset()
 
 
 screen.exitonclick()
