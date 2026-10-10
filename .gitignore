@@ -1,4 +1,5 @@
 *.log
 logs/
 C++/
+.venvWindows/
 __pycache__/
