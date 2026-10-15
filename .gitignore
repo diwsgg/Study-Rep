@@ -2,4 +2,6 @@
 logs/
 C++/
 .venvWindows/
+.env
 __pycache__/
+.vscode/
