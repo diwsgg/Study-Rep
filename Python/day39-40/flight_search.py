@@ -35,20 +35,8 @@ class FlightSearch:
             "return_date":   six_month_later.strftime("%Y-%m-%d"),
         }
         return params
-
-    
-    #not finished yet
-    def comparePrices(self, data, price : float):
-        flights = data.get("best_flights", []) + data.get("other_flights", [])
-        cheapest = min(flights, key=lambda f: f["price"])
-        #Once we have the chepeast
-        if cheapest<price:
-            #then is a deal
-            #we have to return cheapest
-            return cheapest
-        return None
         
-    def getFlightData(self, code : str, price: float):
+    def getFlightData(self, code : str):
         #This makes it impossible to forget to prepare the parameters before making the request.
         params = self.transformParameters(code)
         response = requests.get(self.url, params=params)
@@ -56,7 +44,8 @@ class FlightSearch:
         if "error" in data:
             print("API error:", data["error"])
         else:
-            self.comparePrices(data,price)
+            #we are returing the value of data only
+            return data
             
 
     
