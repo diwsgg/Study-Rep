@@ -20,11 +20,9 @@ class FlightSearch:
         self.departure_id = "LHR"
 
     #this will be call for n times with the IATA Codes that we get from data_manager on main
-    def transformParameters(self, code: str):
+    def transformParameters(self, code: str, number_stops):
         tomorrow = datetime.now() + timedelta(days=1)
         six_month_later  = datetime.now() + timedelta(days=6 * 30)
-        #the change for that making local variables
-        #is that we can change those values in the interactions that we will do
         params = {
             "api_key":self.key,
             "engine": self.engine,
@@ -34,11 +32,15 @@ class FlightSearch:
             "outbound_date": tomorrow.strftime("%Y-%m-%d"),         
             "return_date":   six_month_later.strftime("%Y-%m-%d"),
         }
+        #first create the params with all the data and then just if is none we can omit this 
+        if number_stops is not None:
+            params["stops"]= number_stops 
+
         return params
         
-    def getFlightData(self, code : str):
+    def getFlightData(self, code : str, stops):
         #This makes it impossible to forget to prepare the parameters before making the request.
-        params = self.transformParameters(code)
+        params = self.transformParameters(code, stops)
         response = requests.get(self.url, params=params)
         data = response.json()
         if "error" in data:
