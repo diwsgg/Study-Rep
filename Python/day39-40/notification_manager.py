@@ -50,4 +50,4 @@ class NotificationManager:
                     f'\n\n {message}'
             )
         
-        print(f'Email submitted to{email}')    
+        print(f'Email submitted to {email}')    
