@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="spanish">
+    <!--
+    THE HEAD 
+    is the part where the page will charge some components, like the tag
+    meta, charset is for the characters in this case UTF-8 (is the most common)
+    -->
+    <head>
+        <meta charset="UTF-8"> 
+        <!-- this is for the first time that our website is open -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>This is the title for our Website</title>
+    </head>
+    <body>
+        <p>This is where the content goes in between the opening and closing for body</p>
+        <p>We can add images, text, and all that we need</p>
+        <p>With only writing ! in a .html file we can generate the basic structure for html</p>
+
+        <h1>Order and Unorder lists</h1>
+
+        <p>This is an unorder list, since it will no have numbers only dots<br> <b>ul (unorder list)</b></p>
+        <ul>
+            <p>we have to use li for the elements to be on the list if we do not use them then, 
+                it will appears as a blank space between each paragraph</p>
+            <li>Milk</li>
+            <li>Eggs</li>
+            <li>Flour</li>
+            <li>Butter</li>
+            <li>Strawberries</li>
+        </ul>
+
+        <p>This is an order list, it will have numbers<br> <b>ol (order list)</b></p>
+        <ol>
+            <li>Milk</li>
+            <li>Eggs</li>
+            <li>Flour</li>
+            <li>Butter</li>
+            <li>Strawberries</li>
+        </ol>
+        <h1>Excersice with lists</h1>
+        <h1>Angela's Cinnamon Roll Recipe</h1>
+        <h2>Ingredients</h2>
+        <h3>For the dough:</h3>
+        <ul>
+            <li>¾ cup warm milk</li>
+            <li>2 ¼ teaspoons yeast </li>
+            <li>¼ cup granulated sugar</li>
+            <li>1 egg plus 1 egg yolk</li>
+            <li>¼ cup butter</li>
+            <li>3 cups bread flour</li>
+        </ul>
+        <h3>For the filling:</h3>
+        <ul>
+            <li>2/3 cup dark brown sugar </li>
+            <li>1 ½ tablespoons ground cinnamon</li>
+            <li>¼ cup butter</li>
+        </ul>
+        <h2>Instructions</h2>
+        <ol>
+            <li>Mix the milk with the yeast, sugar, eggs.</li>
+            <li>Melt the butter and add to the mixture.</li>
+            <li>Add in the flour and mix until combined into a dough.</li>
+            <li>Knead the dough for 10 minuites. </li>
+            <li>Transfer the dough into a large bowl and cover with plastic wrap. Leave it somewhere to rise for 2 hours.</li>
+            <li>After the dough has doubled in size, roll it out into a large rectangle.</li>
+            <li>Melt the butter for the filling and mix in the sugar and cinnamon.</li>
+            <li>Spread the filling onto the dough then roll the dough into a swiss roll. </li>
+            <li>Cut the roll into 3cm sections and place flat into a baking tray.</li>
+            <li>Pre-heat the oven to 350F or 180C, then bake the rolls for 20-25min until lightly brown</li>
+        </ol>
+
+        <h1>Nested lists</h1>
+        <ul>
+            <li>list 1 </li>
+            <li>list 1 </li>
+            <ul>
+                <li>list nested</li>
+                <ol>
+                    <li>list nested again</li>
+                </ol>
+            </ul>
+            <li>list 1 </li>
+            <li>list 1 </li>
+        </ul>
+
+        <h1>Excersice nested lists</h1>
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <ol>
+                <li>B1</li>
+                <li>B2</li>
+                <ul>
+                    <li>B2a</li>
+                    <ul>
+                        <li>B2aa</li>
+                        <li>B2ab</li>
+                    </ul>
+                    <li>B2b</li>
+                    <li>B2c</li>
+                </ul>
+                <li>B3</li>
+            </ol>
+            <li>C</li>
+        </ul>
+
+
+        <h1>Links</h1>
+        <p>The way we introduce a link is with the tag 'a' and href like this <br> '
+            <b>< a href="www.link.com "> Title of link </ a>'</b></p>
+        <a href="https://music.youtube.com/watch?v=F2HEjXG4kno&list=RDAMVMF2HEjXG4kno">Example of link, you can click it</a>
+
+        <h1>Attributes</h1>
+        <p>The structure for any 'attribute' is like this <br>
+            <b>"< tag 'name of attribute' = "value" > Content </ tag >"</b>  <br>
+            we can have as many attributes as we wanted just changing the name we wanted</p>
+
+        <h1>Excersice with list and links</h1>
+        <h1>My top 5 Favourite Websites</h1>
+        <ol>
+            <li><a href="https://www.friv.com/">GAMES</a></li>
+            <li><a href="https://music.youtube.com/">MUSIC</a></li>
+            <li><a href="https://www.amazon.com.mx/ref=nav_logo">Shopping</a></li>
+            <li><a href="https://www.fitnesssuperstore.com/">GYM</a></li>
+            <li><a href="https://fast.com/">Internet</a></li>
+        </ol>
+
+        <h1>Images</h1>
+        <p>For the images we need to use the next structure<br>
+            <b>< img src="url"/></b>
+            The url can be a link or the location of the image on our system <br>
+            there can be an <b>alt attribute</b> that will display a text description of the image <br>
+            <b>This attribute defines an alternative text description of the image.</b>
+            If the user chooses not to display images, or if the browser cannot display the image because it is invalid or 
+            an unsupported type. In these cases, the browser may replace the image with the text defined in this element's alt attribute. 
+        </p>
+        <img src="https://www.gettyimages.com.mx/fotos/forest" alt="Image of a forest"/>
+        <img src="https://media.gettyimages.com/id/1491158797/es/foto/los-frondosos-%C3%A1rboles-verdes-se-elevan-en-el-aire.jpg?s=2048x2048&w=gi&k=20&c=z5lyQy6fEuhhrHCpy9krSktr8g89PemWGwkyfyOAb3Q=" alt="image of a forest"/>
+    
+        <h1>Excersices with images</h1>
+        <h1>I am a cat person</h1>
+        <img src="https://raw.githubusercontent.com/appbrewery/webdev/main/kitten.jpeg" alt="Kitten jpeg">
+        <h1>I am a Puppy person</h1>
+        <img src="https://raw.githubusercontent.com/appbrewery/webdev/main/puppy.gif" alt="Puppy Gif">
+    </body>
+</html>
