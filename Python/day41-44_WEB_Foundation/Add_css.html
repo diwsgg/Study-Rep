@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to use CSS</title>
+</head>
+<body>
+    <p>There are three ways to use CSS in our page</p>
+    <ul>
+        <li>Inline</li>
+        <ul>
+            <li><b> " (angle bracket)tag style="css"(/greater-than sign)</b></li>
+            <li>This goes in the html tag: <b>html style='background: blue'</b> <br>
+            this is just for a single element on the page, but will be not recommend for a lot of attributes </li>
+        </ul>
+        <li>Internal</li>
+        <ul>
+            <li><b> " (angle bracket)style(greater-than sign) css (/angle bracket)style(greater-than sign)</b></li>
+            <li>lest suppouse he have <br> html <br> head <br> style <br> html{background:red ....} <br> and close every of the tags <br>
+            this is the internal it is a tag only for css but not on a different file, in this case we can add more attributes in the tag style
+            but if we have a multipage this will not work</li>
+        </ul>
+        <li>External</li>
+        <ul>
+            <li><b> " (angle bracket)link href="style.css"/(greater-than sign)</b></li>
+            <li>This is the part where the css goes to a different file, and to called it we do <br>
+            html <br> head <br> link rel='stylesheet' href='./styles.css' <br> and the rest <br>
+            as we can see this is the most useful way to use a css file without mixing the same file</li>
+        </ul>
+    </ul>
+
+    <h1>CSS Selectors</h1>
+    <p>h1{ <br>
+        color: green; <br>
+        }<br>
+    <b>The h1 IS OUR CSS SELECTOR</b> This is the part of HTML to apply the rules inside the brackets, also call in this case <br>
+    <b>ELEMENT SELECTOR</b> 
+    </p>
+    <h2>Class Selector</h2>
+    <p>(CSS FILE) This take a special symbol, that is a dot, and then the namme of the class</p>
+    <p> Leets supposed he have a h1 of color blue but another h1 need to be red, well with classes instead of element selector, we can do this <br>
+    h1 class="blue-class"... h1 class="red-class" the class can have any name that we wanted but need to be the same on the css file</p>
+    <h2>ID Selector</h2>
+    <p>(CSS FILE) This take a special symbol, that is a hashtag (#), and then the namme of the id</p>
+    <p> h2 id="name_id"... and for the rest of it</p>
+    <h2>What is the difference between <b>id</b> and <b>class</b> selector </h2>
+    <p>The class can be apply to many elements <br> Meanwhile the id should be only apply to a single element</p>
+
+    <h1>Attribute selector</h1>
+    <p>p[draggable]{color:red}</p>
+    <ul>
+        <li>p is for html element</li>
+        <li>[draggable] is the attribute</li>
+        <li>{} select all paragraphs elements with the attribute draggable and apply whats is inside the brackets</li>
+    </ul>
+    <p>We can also put conditions like <b>p[draggable="false"]{color:blue}</b> to make it more specific</p>
+
+    <h1>Universal Selector</h1>
+    <p>*{color: purple}</p>
+    <p>This will change for all the tags, p, h1,2,3.., even if they have classes, ids, or attributes</p>
+
+</html>
