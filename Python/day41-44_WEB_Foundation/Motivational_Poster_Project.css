@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+}
+
+.all_center{
+    /*Center a div*/
+    width: 50%;
+    margin-left: 25%; 
+    /*Add a little top*/
+    margin-top: 2%;
+    /*This is for the text inside the div*/
+    color: white;
+    text-align: center;
+}
+
+.images{
+    width: 100%;
+    border: 5px solid white;
+}
+
+h1 {
+  font-family: "Playwrite TZ Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}

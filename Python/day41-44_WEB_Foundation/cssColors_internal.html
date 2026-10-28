@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inline</title>
+  <style>
+
+    html{
+      background-color: antiquewhite;
+      font-size: 30px;
+    }
+
+    h2{
+      color: whitesmoke;
+      background-color: darkseagreen;
+    }
+    h3{
+      color: #faf8f1;
+      background-color: #c58940;
+    }
+
+    #pixel {
+      font-size: 20px;
+    }
+
+    #point {
+      font-size: 20pt;
+    }
+    /*This affect direct from parent tag*/
+    #em {
+      font-size: 1em;
+    }
+    /*This affects direct from root (most of the times html)*/
+    #rem {
+      font-size: 1rem;
+    }
+
+    footer {
+      font-size: 12pt;
+    }
+
+        #helvetica {
+      font-family: Helvetica, sans-serif;
+    }
+
+    #arial {
+      font-family: Arial, sans-serif;
+    }
+
+    #serif {
+      font-family: serif;
+    }
+
+    #sans-serif {
+      font-family: sans-serif;
+    }
+
+    #cursive {
+      font-family: cursive;
+    }
+
+    #monospace {
+      font-family: monospace;
+    }
+
+    #fantasy {
+      font-family: fantasy;
+    }
+
+    #left_side{
+      text-align: left;
+    }
+    #right_side{
+      text-align: right;
+    }
+    #center_side{
+      text-align: center;
+    }
+    #start_side{
+      text-align: start;
+    }
+    #end_side{
+      text-align: end;
+    }
+    /*This is our own font, and this goes in the css file, like this*/
+    .playwrite-tz-guides-regular {
+      font-family: "Playwrite TZ Guides", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+</style>
+
+  <!--To have our own font family we can go to fonts.google.com and with the link that it will provides us
+  this have to be outside the styles, and inside the head, important as we see above that font comes, with
+  the css style to implemented so we just need to copy all-->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+TZ+Guides&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <h1>Color of tags</h1>
+    <h2>Hello</h2>
+    <h3>World</h3>
+
+  <h1>Types of sizes</h1>
+    <p id="pixel">1 Pixel is 1/96 of an Inch</p>
+    <p id="point">1 Point is 1/72 of an Inch</p>
+    <footer>
+      <p id="em">1em is 100% the size of the parent element</p>
+      <p id="rem">1rem is 100% the size of the root element</p>
+    </footer>
+
+  <h1>Types of font family</h1>
+    <p id="helvetica">Helvetica</p>
+    <p id="arial">Arial</p>
+    <p id="serif">Serif</p>
+    <p id="sans-serif">Sans Serif</p>
+    <p id="cursive">Cursive</p>
+    <p id="monospace">Monospace</p>
+    <p id="fantasy">Fantasy</p>
+    <p class="playwrite-tz-guides-regular ">Hello this a test for our own font family</p>
+
+  <h1>Text Align</h1>
+    <p>We can have text that can be on the left, right, start, end depending in which option we prefer</p>
+    <p id="left_side">This is a text left align</p>
+    <p id="right_side">This is a text right align</p>
+    <p id="center_side">This is a text center align</p>
+    <p id="start_side">This is a text start align</p>
+    <p id="end_side">This is a text end align</p>
+
+  <!--We are going to do it inline-->
+    <!-- TODOs
+  1. Change the color of <p>Color</p> to "coral" color.
+  2. Change the font size of <p>Font Size</p> to 2X the size of the root font size.
+  3. Change the font weight of <p>Font Weight</p> to 900.
+  4. Change the font family of <p>Font Family</p> to the Google font Caveat with regular (400) font weight.
+  Link: https://fonts.google.com/specimen/Caveat
+  5. Change the <p>Text Align</p> to right align.
+  6. Change the the root (html element) font size to 30px -->
+
+  <h1>Excersice CSS Properties</h1>
+    <p style="color: coral;">Color</p>
+    <p style="font-size: 2rem;">Font Size</p>
+    <p style="font-weight: 900px;">Font Weight</p>
+    <p class="playwrite-tz-guides-regular ">Font Family</p>
+    <p style="text-align: right;">Text Align</p>
+</body>
+
+</html>
