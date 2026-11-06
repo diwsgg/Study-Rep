@@ -6,3 +6,4 @@ C++/
 __pycache__/
 .vscode/
 token.txt
+chrome_profile/
