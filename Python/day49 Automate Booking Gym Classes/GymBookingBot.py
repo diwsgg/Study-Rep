@@ -225,3 +225,35 @@ class GymBookingBot:
                 })
 
         return processed_classes, total_target_classes
+
+    def open_my_bookings(self):
+        self.wait.until(
+            EC.element_to_be_clickable(
+                (By.LINK_TEXT, 'My Bookings')
+            )
+        ).click()
+
+    def count_bookings(self):
+
+        booking_classes = self.driver.find_elements(
+            By.CSS_SELECTOR,
+            "div[id^='booking-card-booking_']"
+        )
+
+        waitlist_classes = self.driver.find_elements(
+            By.CSS_SELECTOR,
+            "div[id^='waitlist-card-waitlist_']"
+        )
+
+        print('\n--- VERIFYING ON MY BOOKINGS PAGE ---')
+        #python will concatenate both [list1]+[list2] [1,2,3]+[8,5,7] = [1,2,3,8,5,7] like this
+        #this works because both are lists, It doesn't work with every possible pair of iterables.
+        for booking in booking_classes + waitlist_classes:
+
+            class_name = booking.find_element(
+                By.CSS_SELECTOR, 'h3'
+            ).text.strip()
+
+            print(f'✓ Verified: {class_name}')
+
+        return len(booking_classes) + len(waitlist_classes)
