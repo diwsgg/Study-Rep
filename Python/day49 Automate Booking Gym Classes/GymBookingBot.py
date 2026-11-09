@@ -110,3 +110,118 @@ class GymBookingBot:
             next_tuesday + '-1800',
             next_thursday + '-1800'
         }
+
+    def find_all_buttons(self):
+        return self.wait.until(
+            EC.visibility_of_all_elements_located((
+                By.CSS_SELECTOR,
+                "button[id^='book-button-']"
+            ))
+        )
+
+    def check_day(self, button_id, target_dates):
+        date_tag = '-'.join(button_id.split('-')[3:])
+        return date_tag in target_dates
+
+    def get_date_title(self, button):
+        day_group = button.find_element(
+            By.XPATH,
+            "ancestor::div[starts-with(@id, 'day-group-')][1]"
+        )
+        return day_group.find_element(
+            By.CSS_SELECTOR, "h2"
+        ).text.strip()
+
+    def check_classes(self, target_dates):
+
+        processed_classes = []
+        total_target_classes = 0
+
+        all_buttons = self.find_all_buttons()
+
+        # Save IDs before interacting with the page
+        button_ids = [
+            button.get_attribute('id')
+            for button in all_buttons
+        ]
+
+        for button_id in button_ids:
+
+            is_target = self.check_day(
+                button_id, target_dates
+            )
+
+            if is_target:
+                total_target_classes += 1
+
+            # Find the element again to avoid stale references
+            button = self.wait.until(
+                EC.visibility_of_element_located(
+                    (By.ID, button_id)
+                )
+            )
+
+            button_text = ' '.join(
+                button.text.split()
+            ).casefold()
+
+            date_label = self.get_date_title(button)
+
+            schedule_class = button_id.split('-')[2]
+
+            class_name = self.class_names.get(
+                schedule_class,
+                schedule_class.title()
+            )
+
+            status = None
+
+            if button_text == 'book class' and is_target:
+
+                button.click()
+
+                print(
+                    f'Clicked Book Class for: '
+                    f'{class_name} Class on {date_label}'
+                )
+
+                status = 'New Booking'
+
+            elif button_text == 'join waitlist' and is_target:
+
+                button.click()
+
+                print(
+                    f'Joined waitlist for: '
+                    f'{class_name} Class on {date_label}'
+                )
+
+                status = 'New Waitlist'
+
+            elif button_text == 'booked':
+
+                print(
+                    f'Already booked: '
+                    f'{class_name} Class on {date_label}'
+                )
+
+                status = 'Already Booked'
+
+            elif button_text == 'waitlisted':
+
+                print(
+                    f'Already on waitlist: '
+                    f'{class_name} Class on {date_label}'
+                )
+
+                status = 'Already Waitlisted'
+
+            if status is not None:
+
+                processed_classes.append({
+                    'class': class_name,
+                    'date': date_label,
+                    'status': status
+                })
+
+        return processed_classes, total_target_classes
